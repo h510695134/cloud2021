@@ -3,10 +3,14 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import com.atguigu.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @program: cloud2021
@@ -15,6 +19,7 @@ import javax.annotation.Resource;
  * @create: 2021-03-01 20:24
  **/
 @RestController
+@Slf4j
 public class PaymentController {
 
     @Resource
@@ -22,6 +27,9 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String serverPort;
+
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     @PostMapping("/payment/create")
     public CommonResult create(Payment payment){
@@ -41,5 +49,23 @@ public class PaymentController {
         }else {
             return new CommonResult(400,"查询失败",null);
         }
+    }
+
+    /**
+     * 获取注册进eureka中的服务  相关信息
+     * @return
+     */
+    @GetMapping("/payment/discovery")
+    public Object discovery(){
+        // 获取微服务名称
+        List<String> services = discoveryClient.getServices();
+        services.forEach(e -> System.out.println("****" + e));
+
+        // 获取微服务的具体信息
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-ORDER-SERVICE");
+        instances.forEach(e -> {
+           log.info(e.getServiceId()+"\t"+e.getHost()+"\t"+e.getPort());
+        });
+        return this.discoveryClient;
     }
 }
