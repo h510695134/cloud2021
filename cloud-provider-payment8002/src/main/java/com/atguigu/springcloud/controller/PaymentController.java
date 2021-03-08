@@ -45,4 +45,13 @@ public class PaymentController {
             return new CommonResult(400,"查询失败",null);
         }
     }
+
+    /**
+     * 手写负载均衡算法-1
+     * @return
+     */
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
 }
