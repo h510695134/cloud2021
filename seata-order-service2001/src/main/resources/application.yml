@@ -1,0 +1,27 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    alibaba:
+      seata:
+        #自定义事物组名称需要与seata-server中的对应
+        tx-service-group: whh-tx-goup
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务注册中心地址
+  # 数据库连接地址
+  datasource:
+    driver-class-name: com.alibaba.druid.proxy.DruidDriver
+    url: jdbc:mysql://localhost:3306/seata_order
+    username: root
+    password: rootroot
+
+logging:
+  level: debug
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.atguigu.springcloud.entities
