@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author wanghh
@@ -24,6 +25,13 @@ public class AccountServiceImpl implements AccountService {
      */
     @Override
     public int decrease(Long userId, BigDecimal money) {
+        // 模拟超时异常，全局事务回滚
+        // openfeign 默认等待1秒钟 还有超时重试机制 暂停几秒钟
+        try {
+            TimeUnit.SECONDS.sleep(20);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return accountMapper.decrease(userId,money);
     }
 }
