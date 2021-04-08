@@ -8,14 +8,14 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * @author wanghh
- * @date 2021-04-7
+ * @date 2021-04-8
  */
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class) // 取消数据源的自动创建
 @EnableDiscoveryClient
 @EnableFeignClients
-public class SeataOrderMainApp2001 {
+public class SeataAccountMainApp2003 {
 
     public static void main(String[] args) {
-        SpringApplication.run(SeataOrderMainApp2001.class,args);
+        SpringApplication.run(SeataAccountMainApp2003.class,args);
     }
 }
