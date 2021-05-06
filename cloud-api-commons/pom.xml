@@ -13,6 +13,18 @@
 
 
     <dependencies>
+        <!-- 支付宝支付 -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-easysdk</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!-- 微信支付 -->
+        <dependency>
+            <groupId>com.github.wechatpay-apiv3</groupId>
+            <artifactId>wechatpay-apache-httpclient</artifactId>
+            <version>0.2.2</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -29,5 +41,6 @@
             <artifactId>hutool-all</artifactId>
             <version>5.3.7</version>
         </dependency>
+
     </dependencies>
 </project>

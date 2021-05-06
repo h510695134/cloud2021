@@ -43,6 +43,7 @@
         <module>seata-account-service2003</module>
         <module>whh-thread9008</module>
         <module>java-concurrency</module>
+        <module>alibaba-pay</module>
     </modules>
 
     <!-- 统一管理jar包版本-->
