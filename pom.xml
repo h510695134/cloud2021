@@ -60,7 +60,9 @@
     </properties>
 
 
-    <!-- 子模块继承之后，提供作用：锁定版本+子模块不用写groupID和version -->
+    <!-- 子模块继承之后，提供作用：锁定版本+子模块不用写groupID和version
+      dependecncyManagement里只是声明依赖，并不实现引入，因此子项目需要显示的声明需要用的依赖
+     -->
     <dependencyManagement>
         <dependencies>
             <!-- spring boot 2.2.2 -->
