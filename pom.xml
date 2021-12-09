@@ -44,6 +44,7 @@
         <module>whh-thread9008</module>
         <module>java-concurrency</module>
         <module>alibaba-pay</module>
+        <module>wanghh-rabbitmq</module>
     </modules>
 
     <!-- 统一管理jar包版本-->
