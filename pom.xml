@@ -45,6 +45,8 @@
         <module>java-concurrency</module>
         <module>alibaba-pay</module>
         <module>wanghh-rabbitmq</module>
+        <module>springboot-rabbitmq-producer</module>
+        <module>springboot-rabbitmq-consumer</module>
     </modules>
 
     <!-- 统一管理jar包版本-->
