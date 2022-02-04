@@ -25,7 +25,7 @@ public class OrderController {
         String orderId = UUID.randomUUID().toString();
         // 2,保存成功 发送消息
         String exchangeName = "direct_order_exchange";
-        String routingKey = "direct_sms_routekey";
-        rabbitTemplate.convertAndSend(exchangeName,routingKey,"direct模式,sms发送消息==>" + orderId);
+        String routingKey = "direct_order_routekey";
+        rabbitTemplate.convertAndSend(exchangeName,routingKey,"direct模式,order发送消息==>" + orderId);
     }
 }

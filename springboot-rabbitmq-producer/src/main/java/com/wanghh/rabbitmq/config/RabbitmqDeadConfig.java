@@ -28,6 +28,7 @@ public class RabbitmqDeadConfig {
 
     @Bean
     public Binding deadBinding(){
-        return BindingBuilder.bind(deadQueue()).to(deadDirectExchange()).with("dead");
+        return BindingBuilder.bind(deadQueue()).
+                to(deadDirectExchange()).with("dead");
     }
 }

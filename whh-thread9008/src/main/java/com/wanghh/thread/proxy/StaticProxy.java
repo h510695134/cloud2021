@@ -9,7 +9,7 @@ public class StaticProxy {
     public static void main(String[] args) {
         Marry weddingCompany = new WeddingCompany(new You());
         weddingCompany.happyMarry();
-        new Thread()
+        new Thread();
     }
 }
 
