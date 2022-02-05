@@ -47,6 +47,7 @@
         <module>wanghh-rabbitmq</module>
         <module>springboot-rabbitmq-producer</module>
         <module>springboot-rabbitmq-consumer</module>
+        <module>wanghh-redis-lock</module>
     </modules>
 
     <!-- 统一管理jar包版本-->
