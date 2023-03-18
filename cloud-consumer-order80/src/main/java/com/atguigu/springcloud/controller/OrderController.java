@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.annotation.Resource;
 import java.net.URI;
 import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @program: cloud2021
@@ -40,6 +41,8 @@ public class OrderController {
 
     @PostMapping("/consumer/payment/create")
     public CommonResult<Payment> create(@RequestBody Payment payment){
+        ReentrantLock lock = new ReentrantLock();
+        lock.lock();
         return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
     }
 

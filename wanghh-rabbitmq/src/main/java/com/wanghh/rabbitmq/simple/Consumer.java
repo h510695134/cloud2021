@@ -1,6 +1,8 @@
 package com.wanghh.rabbitmq.simple;
 
 import com.rabbitmq.client.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,5 +54,7 @@ public class Consumer {
                 connection.close();
             }
         }
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("");
+        applicationContext.getBean("");
     }
 }
