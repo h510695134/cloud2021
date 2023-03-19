@@ -1,0 +1,11 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: wanghh-kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: test-consumer-group
+    listener:
+      missing-topics-fatal: false
