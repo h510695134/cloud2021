@@ -13,7 +13,12 @@ import org.springframework.stereotype.Component;
 public class RecevieInfo {
 
     @KafkaListener(topics = "topic1")
-    public void recevieInfo(String message){
+    public void receiveInfo(String message){
         System.out.println("接收消息="+message);
+    }
+
+    @KafkaListener(topics = "wanghh_topic1")
+    public void syncReceive(){
+
     }
 }
